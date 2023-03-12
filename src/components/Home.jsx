@@ -1,6 +1,8 @@
 import React, {useContext} from 'react'
 import { ContextConsumer } from './contexts/Context'
 
+import Loading from './loading/Loading'
+
 function Home() {
     const {images, handleFavorites, handleCartItems} = useContext(ContextConsumer)
 
@@ -26,7 +28,9 @@ function Home() {
 
     return (
         <div className="home">
-            {renderImages}
+            {
+                images.length ? renderImages : <Loading />
+            }
         </div>
     )
 }

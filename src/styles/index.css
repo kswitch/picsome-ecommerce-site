@@ -103,7 +103,7 @@
   max-width: 900px;
   margin: 0 auto;
 }
-.cart-and-fav h1 {
+.cart-and-fav h1, .cart-and-fav-no-items p {
   text-align: center;
   font-weight: normal;
 }

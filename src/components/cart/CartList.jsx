@@ -2,7 +2,7 @@ import React, {useContext} from 'react'
 import {ContextConsumer} from './../contexts/Context'
 
 function CartList() {
-    const {cartItems, handleCartItems} = useContext(ContextConsumer)
+    const {cartItems, handleCartItems, PlaceOrder} = useContext(ContextConsumer)
 
     const cartList = cartItems.map(item => (
         <div className='cart-item' id={item.id} key={item.id}>
@@ -25,7 +25,7 @@ function CartList() {
         <div className="cart-list">
             {cartList}
             <h4 className='total'>Total: ${total.toFixed(2)}</h4>
-            <button className='checkout-btn'>Place Order</button>
+            <button onClick={PlaceOrder} className='checkout-btn'>Place Order</button>
         </div>
     )
 }

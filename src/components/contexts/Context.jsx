@@ -36,6 +36,9 @@ function ContextProvider(props) {
                             ))
         )
     }
+    function PlaceOrder() {
+        console.log("Order is Being Placed");
+    }
 
     useEffect(() => {
         setFavItems(GetFavoriteImages(images))
@@ -43,7 +46,7 @@ function ContextProvider(props) {
     },[images])
 
     return (
-        <Context.Provider value={{images, favItems, cartItems, handleCartItems, handleFavorites}}>
+        <Context.Provider value={{images, favItems, cartItems, handleCartItems, handleFavorites, PlaceOrder}}>
             {props.children}
         </Context.Provider>
     )
