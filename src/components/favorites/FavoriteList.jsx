@@ -1,11 +1,13 @@
 import React, {useContext} from 'react'
-import {Context} from './../contexts/Context'
+import {ContextConsumer} from './../contexts/Context'
 
 function FavoriteList() {
-    const {favItems} = useContext(Context)
+    const {favItems} = useContext(ContextConsumer)
 
     const favList = favItems.map(item => (
-        <p>{item}</p>
+        <div key={item.id}>
+            <p>Image with ID: {item.id}</p>
+        </div>
     ))
 
     return (

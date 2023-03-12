@@ -1,9 +1,9 @@
 import React, {useContext} from 'react'
-import {Context} from './../contexts/Context'
+import {ContextConsumer} from './../contexts/Context'
 import CartList from './CartList'
 
 function Cart() {
-    const {cartItems} = useContext(Context)
+    const {cartItems} = useContext(ContextConsumer)
 
     return (
         <div className="cart-and-fav">

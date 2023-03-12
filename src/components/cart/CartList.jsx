@@ -1,10 +1,12 @@
 import React, {useContext} from 'react'
-import {Context} from './../contexts/Context'
+import {ContextConsumer} from './../contexts/Context'
 
 function CartList() {
-    const {cartItems} = useContext(Context)
+    const {cartItems} = useContext(ContextConsumer)
     const cartList = cartItems.map(item => (
-        <p>{item}</p>
+        <div key={item.id}>
+            <p>Item with ID: {item.id}</p>
+        </div>
     ))
 
     return (

@@ -1,9 +1,9 @@
 import React, {useContext} from 'react'
 import {Link} from 'react-router-dom'
-import {Context} from './contexts/Context'
+import {ContextConsumer} from './contexts/Context'
 
 function Header() {
-    const {favItems, cartItems} = useContext(Context)
+    const {favItems, cartItems} = useContext(ContextConsumer)
 
     const itemInFav = favItems.length
     const itemInCart = cartItems.length

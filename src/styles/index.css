@@ -40,6 +40,8 @@
   align-items: center;
 }
 .header {
+  position: fixed;
+  width: 100vw;
   background-color: var(--pink);
   padding: 0.5rem 1.25rem;
   -webkit-box-shadow: 0px 2px 10px -5px rgba(21,6,5,1);
@@ -48,6 +50,7 @@
   color: whitesmoke;
   text-decoration: none;
   font-size: 2rem;
+  z-index: 1;
 }
 .header-icons {
   gap: 1rem;
@@ -61,8 +64,8 @@
 }
 /*************************/
 
-.cart-and-fav {
-  padding: 1.5rem 1.25rem;
+.cart-and-fav, .home {
+  padding: 5rem 1.25rem 1.5rem;
 }
 .cart-and-fav h1 {
   text-align: center;
@@ -87,7 +90,37 @@
   text-align: right;
 }
 
-
+.home {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2px;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  z-index: 0;
+}
+.home-images {
+  position: relative;
+}
+.image {
+  display: block;
+  width: 100%;
+}
+.home-images-icons {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 95%;
+  top: 1%;
+  left: 0%;
+  right: 0%;
+}
+.fav-icon {
+  color: var(--red);
+}
+.cart-icon {
+  color: rgb(155, 233, 238);
+}
 /* 
 @media (prefers-color-scheme: light) {
   :root {

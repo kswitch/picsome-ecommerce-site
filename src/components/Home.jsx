@@ -1,12 +1,34 @@
-import React from 'react'
+import React, {useContext} from 'react'
+import { ContextConsumer } from './contexts/Context'
 
 function Home() {
+    const {images, handleFavorites, handleCartItems} = useContext(ContextConsumer)
 
-  return (
-    <div className="home">
-      This is the homepage, the images will be populated here
-    </div>
-  )
+    const renderImages = images.map(image => (
+        <div className='home-images' key={image.id} id={image.id}>
+            <img 
+                className="image" 
+                id={image.id} 
+                src={image.url}
+            />
+            <div className='home-images-icons'>
+                <i 
+                    className={`fav-icon ${image.isFavorite ? 'ri-heart-fill' : 'ri-heart-line'}`}
+                    onClick={(e) => handleFavorites(e.target.parentElement.parentElement.id)}
+                ></i>
+                <i 
+                    className={`cart-icon ${image.isInCart ? 'ri-shopping-cart-fill' : 'ri-add-circle-line'}`}
+                    onClick={(e) => handleCartItems(e.target.parentElement.parentElement.id)}
+                ></i>
+            </div>
+        </div>
+    ))
+
+    return (
+        <div className="home">
+            {renderImages}
+        </div>
+    )
 }
 
 export default Home

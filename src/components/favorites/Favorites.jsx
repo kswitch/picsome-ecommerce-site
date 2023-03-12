@@ -1,10 +1,10 @@
 import React, {useContext} from 'react'
-import {Context} from './../contexts/Context'
+import {ContextConsumer} from './../contexts/Context'
 import FavoriteList from './FavoriteList'
 
 
 function Favorites() {
-    const {favItems} = useContext(Context)
+    const {favItems} = useContext(ContextConsumer)
 
     return (
         <div className="cart-and-fav">
