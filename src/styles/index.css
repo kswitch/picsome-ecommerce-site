@@ -64,38 +64,12 @@
 }
 /*************************/
 
-.cart-and-fav, .home {
-  padding: 5rem 1.25rem 1.5rem;
-}
-.cart-and-fav h1 {
-  text-align: center;
-  font-weight: normal;
-}
-.cart-and-fav-no-items {
-  display: flex;
-  flex-direction: column;
-  padding-top: 1rem;
-  gap: 1rem;
-}
-.checkout-btn {
-  background-color: whitesmoke;
-  color: var(--black);
-  outline: none;
-  border-color: var(--black);
-  cursor: pointer;
-  padding: 15px;
-  font-weight: bold;
-}
-.total {
-  text-align: right;
-}
-
+/************** Home Page Styles **********/
 .home {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2px;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
+  padding: 5rem 0.5rem 1.5rem 0.5rem;
   z-index: 0;
 }
 .home-images {
@@ -119,8 +93,71 @@
   color: var(--red);
 }
 .cart-icon {
-  color: rgb(155, 233, 238);
+  color: var(--blue);
 }
+/************************************** */
+
+/*********** Cart Page Styling ************/
+.cart-and-fav {
+  padding: 5rem 0.5rem 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.cart-and-fav h1 {
+  text-align: center;
+  font-weight: normal;
+}
+.cart-item, .cart-list, .cart-item div {
+  display: flex;
+}
+.cart-list {
+  flex-direction: column;
+}
+.cart-item {
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.cart-item div {
+  gap: 0.5rem;
+}
+.cart-item-img {
+  display: block;
+  width: 150px;
+}
+.cart-item-delete-btn {
+  font-size: 1.5rem;
+}
+.cart-item-delete-btn, .cart-item-img {
+  align-self: center;
+}
+.cart-item div, .cart-item p {
+  align-self: center;
+}
+.cart-and-fav-no-items {
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+  gap: 1rem;
+}
+.checkout-btn {
+  background-color: whitesmoke;
+  color: var(--black);
+  outline: none;
+  border-color: var(--black);
+  cursor: pointer;
+  margin: 1rem auto 0rem;
+  padding: 15px;
+  font-weight: bold;
+}
+.total {
+  text-align: right;
+}
+/******************************************** */
+
+
+
+
+
 /* 
 @media (prefers-color-scheme: light) {
   :root {
