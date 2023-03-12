@@ -90,9 +90,11 @@
   right: 0%;
 }
 .fav-icon {
+  font-size: 1.5rem;
   color: var(--red);
 }
 .cart-icon {
+  font-size: 1.5rem;
   color: var(--blue);
 }
 /************************************** */
