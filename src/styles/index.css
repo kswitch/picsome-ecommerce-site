@@ -65,7 +65,7 @@
 /*************************/
 
 /************** Home Page Styles **********/
-.home {
+.home, .favorite-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2px;
@@ -155,6 +155,15 @@
   text-align: right;
 }
 /******************************************** */
+
+/******** Favorites Page Styling Adjustments******/
+.favorite-list {
+  padding: 1rem 0rem 1.5rem 0rem;
+}
+.fav-images {
+  padding-bottom: 0.5rem;
+}
+/* *********************************** */
 
 
 
