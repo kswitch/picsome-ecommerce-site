@@ -36,8 +36,9 @@ function ContextProvider(props) {
                             ))
         )
     }
-    function PlaceOrder() {
-        console.log("Order is Being Placed");
+    
+    function EmptyCart() {
+        setImages(prevImg => prevImg.map(img => ({...img, isInCart: false})))
     }
 
     useEffect(() => {
@@ -46,7 +47,7 @@ function ContextProvider(props) {
     },[images])
 
     return (
-        <Context.Provider value={{images, favItems, cartItems, handleCartItems, handleFavorites, PlaceOrder}}>
+        <Context.Provider value={{images, favItems, cartItems, handleCartItems, handleFavorites, EmptyCart}}>
             {props.children}
         </Context.Provider>
     )
