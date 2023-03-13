@@ -13,10 +13,18 @@ function ContextProvider(props) {
     
     useEffect(() => {
         async function dataFetcher(url) {
-            const res = await fetch(url)
-            const data = await res.json()
-            const imagesWithNewProps = await GiveNewProps(data)
-            return setImages(imagesWithNewProps)
+            try {
+                const res = await fetch(url)
+                if(!res.ok) {
+                    throw Error(res.status)
+                }
+                const data = await res.json()
+                const imagesWithNewProps = await GiveNewProps(data)
+                return setImages(imagesWithNewProps)
+            }
+            catch(err) {
+                console.warn(err)
+            }
         }
         dataFetcher(url)
     },[])
